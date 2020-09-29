@@ -1,0 +1,81 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 20px;
+  background-color: #1bbbb8;
+}
+
+.title {
+  font-size: 3em;
+  color: white;
+}
+
+.content {
+  padding: 20px;
+  background-color: #d1f1f0;
+}
+
+.description_section {
+  /* TODO */
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.section {
+  padding: 10px;
+}
+
+.input_group {
+  padding: 10px 0;
+}
+
+.reward_message {
+  font-size: 1.5em;
+}
+.reward_amount {
+  color: red;
+}
+
+label,
+input,
+select {
+  font-size: 1em;
+}
+
+select {
+  padding: 5px 10px;
+}
+
+.button_submit {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: #db0fe5;
+  color: white;
+}
+
+.outcome_section {
+  padding: 20px;
+  margin: 20px;
+}
+.win_section {
+  background-color: lightgreen;
+}
+.lose_section {
+  background-color: pink;
+}

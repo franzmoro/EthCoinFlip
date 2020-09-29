@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Coin Flip Betting Dapp</title>
+  </head>
+  <body>
+    <div class="header"><h1 class="title">Eth Coin Flip</h1></div>
+
+    <div class="content">
+      <div class="description_section">
+        <p class="description">
+          The world's 1st decentralized coin betting platform!
+        </p>
+      </div>
+
+      <div id="betSection" class="section">
+        <h4>Place your bet</h4>
+        <form>
+          <div class="input_group">
+            <label for="betAmount">Bet amount</label>
+            <input type="number" id="betAmount" placeholder="(gwei)" min="1" />
+          </div>
+
+          <div class="input_group">
+            <label for="userBet">Pick an Outcome</label>
+            <select id="userBet">
+              <option value=""></option>
+              <option value="0">Heads</option>
+              <option value="1">Tails</option>
+            </select>
+          </div>
+        </form>
+
+        <p class="reward_message">
+          You could win
+          <strong class="reward_amount"
+            ><span id="rewardAmount">0</span> gwei</strong
+          >!
+        </p>
+        <button type="button" id="placeBet" class="button_submit">
+          Try your luck!
+        </button>
+      </div>
+
+      <div id="result">
+        <div
+          class="outcome_section win_section"
+          id="winSection"
+          style="display: none"
+        >
+          <p>
+            You won!
+            <strong class="reward_amount">
+              <span id="winAmount">0</span> wei
+            </strong>
+            will be accredited into your wallet!
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="loseSection"
+        class="outcome_section lose_section"
+        style="display: none"
+      >
+        <p>You lost!</p>
+      </div>
+      <button
+        id="tryAgainButton"
+        class="try_again_button"
+        style="display: none"
+      >
+        Try your luck again
+      </button>
+    </div>
+  </body>
+  <script src="/main.js"></script>
+</html>
