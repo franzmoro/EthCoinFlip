@@ -14,9 +14,8 @@ contract BetFlip is Ownable {
     }
 
     function placeBet(uint256 bettedOutcome) public payable minimum(0.1 ether) {
-        require(address(this).balance > 0, "User balance must be above zero");
         require(
-            address(this).balance >= msg.value * 2,
+            address(this).balance >= msg.value,
             "The contract does not have enough funds"
         );
         require(
@@ -28,7 +27,7 @@ contract BetFlip is Ownable {
             msg.sender.transfer(msg.value * 2);
             // TODO: count tx fee?
             balance -= msg.value * 2;
-            emit BetOutcome(msg.sender, msg.value * 2, true);
+            emit BetOutcome(msg.sender, msg.value, true);
         } else {
             balance += msg.value;
             emit BetOutcome(msg.sender, msg.value, false);

@@ -5,8 +5,9 @@ const BetFlipMockOutcome = artifacts.require("BetFlipMockOutcome");
 const HEADS = 0;
 const TAILS = 1;
 
-const multiply = (weiString, multiplier) =>
-  `${parseInt(weiString) * multiplier}`;
+const multiply = (weiString, multiplier) => {
+  return `${parseInt(weiString) * multiplier}`;
+};
 
 const minimumCost = web3.utils.toWei("0.1", "ether");
 const betAmount = multiply(minimumCost, 10);
@@ -63,7 +64,7 @@ contract("BetFlip", async (accounts) => {
   it("should revert placeBet if value is below threshold", async () => {
     await truffleAssert.reverts(
       contractInstance.placeBet(HEADS, {
-        value: minimumCost - 1,
+        value: multiply(minimumCost, 0.9),
         from: gambler,
       })
     );
@@ -88,7 +89,7 @@ contract("BetFlip", async (accounts) => {
 
     await truffleAssert.reverts(
       contractInstance.placeBet(HEADS, {
-        value: balance * 10,
+        value: multiply(balance, 10),
         from: gambler,
       })
     );
@@ -180,7 +181,7 @@ contract("BetFlip", async (accounts) => {
       "BetOutcome",
       ({ amount, wonOrLost, userAddress }) => {
         return (
-          parseInt(amount.toString()) === parseInt(betAmount) * 2 &&
+          parseInt(amount.toString()) === parseInt(betAmount) &&
           wonOrLost === true &&
           userAddress === gambler
         );
