@@ -4,24 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-    <title>Coin Flip Betting Dapp</title>
+    <title>Eth Flip Dapp</title>
   </head>
   <body>
-    <div class="header"><h1 class="title">Eth Coin Flip</h1></div>
+    <div class="header"><h1 class="title">Eth Flip</h1></div>
 
     <div class="content">
       <div class="description_section">
-        <p class="description">
-          The world's 1st decentralized coin betting platform!
-        </p>
+        <h2 class="description">
+          The world's 1st de-centralized <br />Coin Flip betting platform!
+        </h2>
       </div>
 
-      <div id="betSection" class="section">
-        <h4>Place your bet</h4>
+      <div id="betSection" class="section border">
+        <h4 class="section_title">Place your bet</h4>
         <form>
           <div class="input_group">
             <label for="betAmount">Bet amount</label>
-            <input type="number" id="betAmount" placeholder="(gwei)" min="1" />
+            <input type="number" id="betAmount" placeholder="(ether)" />
           </div>
 
           <div class="input_group">
@@ -34,12 +34,14 @@
           </div>
         </form>
 
-        <p class="reward_message">
-          You could win
-          <strong class="reward_amount"
-            ><span id="rewardAmount">0</span> gwei</strong
-          >!
-        </p>
+        <div class="section border">
+          <h4 class="section_title">
+            You could win
+            <strong class="reward_amount"
+              ><span id="rewardAmount">0</span> ether</strong
+            >!
+          </h4>
+        </div>
         <button type="button" id="placeBet" class="button_submit">
           Try your luck!
         </button>
@@ -52,11 +54,11 @@
           style="display: none"
         >
           <p>
-            You won!
+            You won
             <strong class="reward_amount">
-              <span id="winAmount">0</span> wei
+              <span id="winAmount">0</span> ether
             </strong>
-            will be accredited into your wallet!
+            !
           </p>
         </div>
       </div>
@@ -68,14 +70,31 @@
       >
         <p>You lost!</p>
       </div>
-      <button
-        id="tryAgainButton"
-        class="try_again_button"
-        style="display: none"
-      >
-        Try your luck again
-      </button>
+
+      <div class="section border">
+        <button
+          id="tryAgainButton"
+          class="button_submit try_again_button"
+          style="display: none"
+        >
+          Try again
+        </button>
+      </div>
+
+      <div class="section">
+        <h3>Total jackpot:</h3>
+        <p class="contract_balance">
+          <span id="contractBalance">0</span> ether
+        </p>
+      </div>
     </div>
   </body>
-  <script src="/main.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./abi.js"></script>
+  <script src="./web3.min.js"></script>
+  <script src="./main.js"></script>
 </html>

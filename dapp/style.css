@@ -5,7 +5,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+input,
+select,
+p {
   margin: 0;
   padding: 0;
 }
@@ -23,24 +26,42 @@ h6 {
 .content {
   padding: 20px;
   background-color: #d1f1f0;
-}
-
-.description_section {
-  /* TODO */
+  /* header height + padding, etc. = 135px */
+  height: calc(100vh - 135px);
 }
 
 .description {
-  margin-top: 10px;
-  font-size: 1.5em;
-  font-weight: bold;
+  padding: 10px 0;
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: normal;
 }
 
 .section {
-  padding: 10px;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.section_title {
+  font-size: 1.5em;
+}
+
+.border {
+  border-top: 1px solid grey;
 }
 
 .input_group {
   padding: 10px 0;
+}
+
+label,
+input,
+select {
+  font-size: 1.2em !important;
+}
+
+input {
+  padding: 5px;
 }
 
 .reward_message {
@@ -69,9 +90,16 @@ select {
   color: white;
 }
 
+.contract_balance {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+}
+
 .outcome_section {
   padding: 20px;
-  margin: 20px;
+  margin: 20px 0;
+  font-size: 1.5em;
 }
 .win_section {
   background-color: lightgreen;
